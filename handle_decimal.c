@@ -3,9 +3,10 @@
  * handle_decimal - print character and return the print count
  */
 
-int handle_decimal(char *str, va_list argp)
+int handle_decimal(const char *str, char *value)
 {
-  printf("\n handle_decimal");
+	if (*str == 'd')
+		printf("\n String is : %s and value is :%s\n", str, value);
 
-  return (0);
+	return (0);
 }

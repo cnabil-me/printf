@@ -3,8 +3,8 @@
  * handle_binary - print character and return the print count
  */
 
-int handle_binary(char *str, va_list argp)
+int handle_binary(const char *str, char *value)
 {
-  printf("\n handle_binary");
-  return (0);
+	printf("\n String is : %s and value is :%s\n", str, value);
+	return (0);
 }

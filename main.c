@@ -1,11 +1,10 @@
-#include <stdio.h>
 #include "main.h"
-#include "helpers.h"
-#include "_printf.c"
 
-int main()
+int main(void)
 {
-  _printf("%c", '3');
 
-  return 0;
+	// printf("\nCounter of char is : %d \n", _printf("%c", 'A'));
+	printf("\nCounter of string is : %d \n", _printf("%s", "Nabil"));
+	// printf("\nCounter of %% is : %d \n", _printf("%%"));
+	return 0;
 }

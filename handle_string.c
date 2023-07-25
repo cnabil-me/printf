@@ -3,9 +3,20 @@
  * handle_string - print character and return the print count
  */
 
-int handle_string(char *str, va_list argp)
+int handle_string(const char *str, char *value)
 {
-  printf("\n handle_string");
+	int count = 0;
 
-  return (0);
+	if (!*str)
+		return (0);
+
+	if (*str == 's')
+
+		while (*value)
+		{
+			count = count + _putchar(*value);
+			value++;
+		}
+
+	return (count);
 }

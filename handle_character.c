@@ -3,10 +3,11 @@
  * handle_character - print character and return the print count
  */
 
-int handle_character(char *str, va_list argp)
+int handle_character(const char *str, char *value)
 {
 
-  if (str)
-    return _putchar(*str);
-  return 0;
+	if (*value && *str)
+		return _putchar(*str);
+
+	return 0;
 }

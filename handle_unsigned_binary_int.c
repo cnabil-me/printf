@@ -1,11 +1,10 @@
 #include "main.h"
 /**
- * handle_octal - print character and return the print count
+ * handle_unsigned_binary_int - print character and return the print count
  */
-
-int handle_octal(char *str, va_list argp)
+int handle_unsigned_binary_int(const char *str, char *value)
 {
-  printf("\n handle_octal");
+	printf("\n String is : %s and value is :%s\n", str, value);
 
-  return (0);
+	return (0);
 }

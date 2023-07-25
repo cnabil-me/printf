@@ -59,6 +59,9 @@
     "stdio.h": "c",
     "stdlib.h": "c",
     "main.h": "c",
-    "stdarg.h": "c"
+    "stdarg.h": "c",
+    "unistd.h": "c",
+    "handle_pointer_address.c": "cpp",
+    "handle_unsigned_hexadecimal.c": "cpp"
   }
 }

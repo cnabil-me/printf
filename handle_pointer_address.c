@@ -3,9 +3,10 @@
  * handle_pointer_address - print character and return the print count
  */
 
-int handle_pointer_address(char *str, va_list argp)
+int handle_pointer_address(const char *str, char *value)
 {
-  printf("\n handle_pointer_address");
+	printf("\n String is : %s and value is :%s\n", str, value);
 
-  return (0);
+	return (0);
 }
+#

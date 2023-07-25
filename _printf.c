@@ -1,30 +1,29 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "main.h"
 
 int _printf(const char *format, ...)
 {
-  int count = 0;
-  va_list args;
-  va_start(args, format);
-  spec *spec_array = create_spec_array();
+	int count = 0;
+	va_list ap;
+	va_start(ap, format);
 
-  while (*format != '\0')
-  {
-    if (*format == '%')
-    {
+	while (*format)
+	{
 
-      handle_speciﬁcations(format + 1, args);
-    }
-    else
-    {
-      putchar(*format);
-      count++;
-    }
-    format++;
-  }
+		if (*format == '%')
+			if (*(format + 1) == '%')
+			{
+				count += _putchar('%');
+				format++;
+			}
 
-  va_end(args);
-  free(spec_array);
-  return count;
+			else
+				count += handle_spec(format + 1, va_arg(ap, char *));
+		else
+			count += _putchar('%');
+		format++;
+	}
+
+	va_end(ap);
+
+	return (count);
 }
