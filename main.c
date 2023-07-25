@@ -1,6 +1,9 @@
 #include <stdio.h>
-int main()
+#include "main.h"
+#include "_printf.c"
+
+int main(void)
 {
-  printf("% -5d", 0);
-  printf("%d", 12345);
+  _printf("Character:[%c] ab%hello\n", 'H');
+  // _printf("Character:[%c] %hello\n", 'H');
 }
