@@ -1,4 +1,5 @@
 *.o
 .editorconfig
-/.vscode
+/.vscode/*
+/.vscode/
 
