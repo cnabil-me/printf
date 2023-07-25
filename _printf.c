@@ -1,30 +1,30 @@
-#include "handle_character.c"
-#include "detect_spec.c"
-#include "helpers.c"
 #include <stdio.h>
+#include <stdarg.h>
+#include "main.h"
 
-/**
- * _printf - Print formatted string
- * @format: Text format
- * Return: Count of printed elements
- */
 int _printf(const char *format, ...)
 {
-  int c = 0;
-  int i = 0;
-  char char_arr[] = {'a', 'b', 'c'};
-  char *p = NULL;
-  while (*format)
+  int count = 0;
+  va_list args;
+  va_start(args, format);
+  spec *spec_array = create_spec_array();
+
+  while (*format != '\0')
   {
-    p + i = format;
     if (*format == '%')
     {
-      detect_spec(p);
+
+      handle_speciﬁcations(format + 1, args);
     }
-    i++;
+    else
+    {
+      putchar(*format);
+      count++;
+    }
     format++;
   }
 
-  // c += handle_character('o');
-  return (0);
+  va_end(args);
+  free(spec_array);
+  return count;
 }

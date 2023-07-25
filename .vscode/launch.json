@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Applications/MAMP/htdocs/printf",
-      "program": "/Applications/MAMP/htdocs/printf/build/Debug/outDebug"
+      "cwd": "/Users/exam/Desktop/DEV/printf",
+      "program": "/Users/exam/Desktop/DEV/printf/build/Debug/outDebug"
     }
   ]
 }

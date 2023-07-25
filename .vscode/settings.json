@@ -58,6 +58,7 @@
   "files.associations": {
     "stdio.h": "c",
     "stdlib.h": "c",
-    "main.h": "c"
+    "main.h": "c",
+    "stdarg.h": "c"
   }
 }

@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include "main.h"
+#include "helpers.h"
 #include "_printf.c"
 
-int main(void)
+int main()
 {
-  _printf("Character:[%c] ab%hello\n", 'H');
-  // _printf("Character:[%c] %hello\n", 'H');
+  _printf("%c", '3');
+
+  return 0;
 }
