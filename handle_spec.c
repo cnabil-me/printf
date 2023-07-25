@@ -34,5 +34,6 @@ int handle_spec(const char *str, char *value)
 			count += spec_array[i].according_func(str, value);
 		}
 	}
+	free(spec_array);
 	return (count);
 }

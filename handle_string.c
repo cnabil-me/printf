@@ -14,7 +14,7 @@ int handle_string(const char *str, char *value)
 
 		while (*value)
 		{
-			count = count + _putchar(*value);
+			count += _putchar(*value);
 			value++;
 		}
 

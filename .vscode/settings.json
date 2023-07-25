@@ -62,6 +62,21 @@
     "stdarg.h": "c",
     "unistd.h": "c",
     "handle_pointer_address.c": "cpp",
-    "handle_unsigned_hexadecimal.c": "cpp"
+    "handle_unsigned_hexadecimal.c": "cpp",
+    "__bit_reference": "cpp",
+    "__node_handle": "cpp",
+    "atomic": "cpp",
+    "bitset": "cpp",
+    "__memory": "cpp",
+    "limits": "cpp",
+    "locale": "cpp",
+    "optional": "cpp",
+    "ratio": "cpp",
+    "system_error": "cpp",
+    "tuple": "cpp",
+    "type_traits": "cpp",
+    "vector": "cpp",
+    "chrono": "cpp",
+    "cstddef": "cpp"
   }
 }

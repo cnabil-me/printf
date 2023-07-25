@@ -5,9 +5,15 @@
 
 int handle_character(const char *str, char *value)
 {
+	// char c = (char)*value;
 
-	if (*value && *str)
-		return _putchar(*str);
+	if (*str)
+	{
+		if (*value)
+		{
+			return _putchar(*value);
+		}
+	}
 
 	return 0;
 }
