@@ -22,7 +22,7 @@ spec_convert *create_spec_array(void)
 	return (spec_array);
 }
 /**
- * struct handle_spec - map function specifier to func handler
+ * handle_spec - map function specifier to func handler
  * @str: the specifier after `%`
  * @value: pointer to the string value
  * Return: the number of characters printed except NULL
