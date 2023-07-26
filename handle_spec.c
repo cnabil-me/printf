@@ -4,6 +4,7 @@
  * struct spec_convert - matchig function handler based on specifier
  * @spec: the specifier after `%`
  * @func: pointer to the according function
+ * Return: the number of characters printed except NULL
  */
 
 spec_convert *create_spec_array(void)
@@ -19,7 +20,7 @@ spec_convert *create_spec_array(void)
 	spec_array[2].spec = 'd';
 	spec_array[2].according_func = handle_decimal;
 
-	return spec_array;
+	return (spec_array);
 }
 int handle_spec(const char *str, char *value)
 {

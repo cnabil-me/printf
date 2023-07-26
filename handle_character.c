@@ -12,7 +12,7 @@ int handle_character(const char *str, char *value)
 	{
 		if (*value)
 		{
-			return _putchar(*value);
+			return (_putchar(*value));
 		}
 	}
 
