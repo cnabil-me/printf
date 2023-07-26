@@ -1,6 +1,10 @@
 #include "main.h"
+
 /**
- * handle_string - print character and return the print count
+ * handle_string - Handle and print strings and return the print count
+ * @str: the string formatter.
+ * @value: The value to be printed.
+ * Return: the number of characters printed except NULL
  */
 
 int handle_string(const char *str, char *value)

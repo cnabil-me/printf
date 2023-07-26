@@ -6,7 +6,6 @@
  * @func: pointer to the according function
  * Return: the number of characters printed except NULL
  */
-
 spec_convert *create_spec_array(void)
 {
 	spec_convert *spec_array = (spec_convert *)malloc(3 * sizeof(spec_convert));
@@ -22,6 +21,12 @@ spec_convert *create_spec_array(void)
 
 	return (spec_array);
 }
+/**
+ * struct handle_spec - map function specifier to func handler
+ * @str: the specifier after `%`
+ * @value: pointer to the string value
+ * Return: the number of characters printed except NULL
+ */
 int handle_spec(const char *str, char *value)
 {
 	int i, count = 0;
