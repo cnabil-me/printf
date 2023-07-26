@@ -2,7 +2,7 @@
 /**
  * char_in_array - check if a char is in array
  * @ch: char to check
- * @char: array to search in
+ * @char_arr: array to search in
  * @count: size of searched in array
  * Return: if found 1 otherwize 0
  */

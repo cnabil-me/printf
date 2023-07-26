@@ -17,6 +17,13 @@ int _printf(const char *format, ...);
 
 // Structure
 
+/**
+ * struct spec_convert - matchig function handler based on specifier
+ * @spec: the specifier after `%`
+ * @func: pointer to the according function
+ * Return: the number of characters printed except NULL
+ */
+
 typedef struct spec_convert
 {
 	char spec;					     // d,f,s
