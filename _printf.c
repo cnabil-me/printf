@@ -8,6 +8,7 @@ int _printf(const char *format, ...)
 {
 	int count = 0;
 	va_list ap;
+	char c;
 
 	va_start(ap, format);
 
@@ -25,7 +26,13 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				count += handle_spec(format + 1, va_arg(ap, char *));
+				if (*(format + 1) == 'c')
+				{
+					c = (char)va_arg(ap, int);
+					count += handle_spec(format + 1, &c);
+				}
+				else
+					count += handle_spec(format + 1, va_arg(ap, char *));
 				format++;
 			}
 			format++;

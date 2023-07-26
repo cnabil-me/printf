@@ -1,14 +1,23 @@
+#include <limits.h>
+#include <stdio.h>
 #include "main.h"
+
 /**
- * main -  the entry point
- * Return:  Always 0
-*/
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
 int main(void)
 {
 
-	printf("\nCounter of string is : %d \n", _printf("%s123", "cnabil"));
-	printf("\nCounter of %% is : %d \n", _printf("%%"));
-	printf("\nCounter of char is : %d \n", _printf("%cello", "H"));
-
+	 _printf("Let's try to printf a simple sentence.\n");
+	 printf("Let's try to printf a simple sentence.\n");
+	 
+	_printf("Character:[%c]\n", 'H');
+	printf("Character:[%c]\n", 'H');
+	_printf("String:[%s]\n", "I am a string !");
+	printf("String:[%s]\n", "I am a string !");
+	 _printf("Percent:[%%]\n");
+	 printf("Percent:[%%]\n");
 	return (0);
 }

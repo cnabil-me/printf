@@ -8,8 +8,15 @@
 
 int handle_decimal(const char *str, char *value)
 {
-	if (*str == 'd')
-		printf("\n String is : %s and value is :%s\n", str, value);
+	int count = 0;
 
-	return (0);
+	while (*value)
+	{
+		if (*str)
+		{
+			count += _putchar(*value);
+		}
+		value++;
+	}
+	return (count);
 }
