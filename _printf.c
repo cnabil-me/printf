@@ -32,7 +32,9 @@ int _printf(const char *format, ...)
 					count += handle_spec(format + 1, &c);
 				}
 				else
+				{
 					count += handle_spec(format + 1, va_arg(ap, char *));
+				}
 				format++;
 			}
 			format++;
