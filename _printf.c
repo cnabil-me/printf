@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * _printf - print formated text
+ * @format: the format
+ * Return:counter of printed chars
+ */
 int _printf(const char *format, ...)
 {
 	int count = 0;
