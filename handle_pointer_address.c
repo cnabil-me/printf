@@ -1,15 +1,21 @@
 #include "main.h"
 /**
- * handle_pointer_address - print pointer adress  and return the print count
- * @str: the string formatter.
- * @value: The value to be printed.
- * Return: the number of characters printed except NULL
+ * print_address - prints address
+ * @ap: argument pointer
+ * @params: the parameters struct
+ *
+ * Return: bytes printed
  */
-
-int handle_pointer_address(const char *str, char *value)
+int print_address(va_list ap, params_t *params)
 {
-	printf("\n String is : %s and value is :%s\n", str, value);
+	unsigned long int n = va_arg(ap, unsigned long int);
+	char *str;
 
-	return (0);
+	if (!n)
+		return (_puts((char *)"(nil)"));
+
+	str = convert(n, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, params);
+	*--str = 'x';
+	*--str = '0';
+	return (print_number(str, params));
 }
-#

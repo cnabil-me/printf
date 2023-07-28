@@ -1,13 +1,19 @@
 #include "main.h"
 /**
- * handle_binary - handle and print binary valuee.
- * @str: the string formatter.
- * @value: The value to be printed.
- * Return: the number of characters printed except NULL
+ * print_binary - prints unsigned binary number
+ * @ap: the argument pointer
+ * @params: the parameters struct
+ *
+ * Return: bytes printed
  */
-
-int handle_binary(const char *str, char *value)
+int print_binary(va_list ap, params_t *params)
 {
-	printf("\n String is : %s and value is :%s\n", str, value);
-	return (0);
+	unsigned int n = va_arg(ap, unsigned int);
+	char *str = convert(n, 2, CONVERT_UNSIGNED, params);
+	int c = 0;
+
+	if (params->hashtag_flag && n)
+		*--str = '0';
+	params->unsign = 1;
+	return (c += print_number(str, params));
 }
