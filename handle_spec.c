@@ -1,40 +1,4 @@
 #include "main.h"
-/**
- * get_specifier - finds the format func
- * @s: the format string
- *
- * Return: the number of bytes printed
- */
-int (*get_specifier(char *s))(va_list ap, params_t *params)
-{
-	specifier_t specifiers[] = {
-	    {"c", print_char},
-	    {"d", handle_integer},
-	    {"i", handle_integer},
-	    {"s", print_string},
-	    {"%", print_percent},
-	    {"b", print_binary},
-	    {"o", print_octal},
-	    {"u", print_unsigned},
-	    {"x", print_hex},
-	    {"X", print_HEX},
-	    {"p", print_address},
-	    {"S", print_S},
-	    {"r", print_rev},
-	    {"R", handle_rot13},
-	    {NULL, NULL}};
-	int i = 0;
-
-	while (specifiers[i].specifier)
-	{
-		if (*s == specifiers[i].specifier[0])
-		{
-			return (specifiers[i].f);
-		}
-		i++;
-	}
-	return (NULL);
-}
 
 /**
  * get_print_func - finds the format func
@@ -46,7 +10,7 @@ int (*get_specifier(char *s))(va_list ap, params_t *params)
  */
 int get_print_func(char *s, va_list ap, params_t *params)
 {
-	int (*f)(va_list, params_t *) = get_specifier(s);
+	int (*f)(va_list, params_t *) = match_specifier(s);
 
 	if (f)
 		return (f(ap, params));
@@ -127,9 +91,38 @@ char *get_width(char *s, params_t *params, va_list ap)
 	}
 	else
 	{
-		while (_isdigit(*s))
+		while (is_digit(*s))
 			d = d * 10 + (*s++ - '0');
 	}
 	params->width = d;
 	return (s);
+}
+
+/**
+ * get_precision - gets the precision from the format string
+ * @p: the format string
+ * @params: the parameters struct
+ * @ap: the argument pointer
+ *
+ * Return: new pointer
+ */
+char *get_precision(char *p, params_t *params, va_list ap)
+{
+	int d = 0;
+
+	if (*p != '.')
+		return (p);
+	p++;
+	if (*p == '*')
+	{
+		d = va_arg(ap, int);
+		p++;
+	}
+	else
+	{
+		while (is_digit(*p))
+			d = d * 10 + (*p++ - '0');
+	}
+	params->precision = d;
+	return (p);
 }

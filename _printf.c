@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _printf - prints anything
- * @format: the format string
- * Return: number of bytes printed
+ * _printf - Print formatted data to stdout
+ * @format: string that contains the text to be written to stdout with format specifiers
+ * Return: the number of characters printed (excluding the null byte)
  */
 int _printf(const char *format, ...)
 {
@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	for (p = (char *)format; *p; p++)
 	{
-		init_params(&params, ap);
+		init_sub_specifiers(&params, ap);
 		if (*p != '%')
 		{
 			sum += _putchar(*p);
@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 		p = get_precision(p, &params, ap);
 		if (get_modifier(p, &params))
 			p++;
-		if (!get_specifier(p))
+		if (!match_specifier(p))
 			sum += print_from_to(start, p, params.l_modifier || params.h_modifier ? p - 1 : 0);
 		else
 			sum += get_print_func(p, ap, &params);

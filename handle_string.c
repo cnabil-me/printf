@@ -81,19 +81,19 @@ int print_string(va_list ap, params_t *params)
  */
 int print_rev(va_list ap, params_t *params)
 {
-	int len, sum = 0;
+	int str_len, count = 0;
 	char *str = va_arg(ap, char *);
 	(void)params;
 
 	if (str)
 	{
-		for (len = 0; *str; str++)
-			len++;
+		for (str_len = 0; *str; str++)
+			str_len++;
 		str--;
-		for (; len > 0; len--, str--)
-			sum += _putchar(*str);
+		for (; str_len > 0; str_len--, str--)
+			count += _putchar(*str);
 	}
-	return (sum);
+	return (count);
 }
 
 /**

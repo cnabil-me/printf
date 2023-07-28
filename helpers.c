@@ -1,29 +1,5 @@
 #include "main.h"
 /**
- * init_params - clears struct fields and reset buf
- * @params: the parameters struct
- * @ap: the argument pointer
- * Return: void
- */
-void init_params(params_t *params, va_list ap)
-{
-	params->unsign = 0;
-
-	params->plus_flag = 0;
-	params->space_flag = 0;
-	params->hashtag_flag = 0;
-	params->zero_flag = 0;
-	params->minus_flag = 0;
-
-	params->width = 0;
-	params->precision = UINT_MAX;
-
-	params->h_modifier = 0;
-	params->l_modifier = 0;
-	(void)ap;
-}
-
-/**
  * convert - converter function, a clone of itoa
  * @num: number
  * @base: base
@@ -62,12 +38,12 @@ char *convert(long int num, int base, int flags, params_t *params)
 }
 
 /**
- * _isdigit - checks if character is digit
+ * is_digit - checks if character is digit
  * @c: the character to check
  *
  * Return: 1 if digit, 0 otherwise
  */
-int _isdigit(int c)
+int is_digit(int c)
 {
 	return (c >= '0' && c <= '9');
 }

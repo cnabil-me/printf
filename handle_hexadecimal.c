@@ -1,12 +1,11 @@
 #include "main.h"
 /**
- * print_hex - prints unsigned hex numbers in lowercase
+ * handle_hexadecimal - prints unsigned hexadecimal number (lowercase)
  * @ap: the argument pointer
  * @params: the parameters struct
- *
- * Return: bytes printed
+ * Return: printed character count
  */
-int print_hex(va_list ap, params_t *params)
+int handle_hexadecimal(va_list ap, params_t *params)
 {
 	unsigned long l;
 	int c = 0;
@@ -30,16 +29,15 @@ int print_hex(va_list ap, params_t *params)
 }
 
 /**
- * print_HEX - prints unsigned hex numbers in uppercase
+ * handle_hexadecimal_upper_case - prints unsigned hexadecimal number (uppercase)
  * @ap: the argument pointer
  * @params: the parameters struct
- *
- * Return: bytes printed
+ * Return: printed character count
  */
-int print_HEX(va_list ap, params_t *params)
+int handle_hexadecimal_upper_case(va_list ap, params_t *params)
 {
 	unsigned long l;
-	int c = 0;
+	int counter = 0;
 	char *str;
 
 	if (params->l_modifier)
@@ -56,5 +54,26 @@ int print_HEX(va_list ap, params_t *params)
 		*--str = '0';
 	}
 	params->unsign = 1;
-	return (c += print_number(str, params));
+	return (counter += print_number(str, params));
+}
+
+/**
+ * handle_pointer - prints address
+ * @ap: argument pointer
+ * @params: the parameters struct
+ *
+ * Return: bytes printed
+ */
+int handle_pointer(va_list ap, params_t *params)
+{
+	unsigned long int n = va_arg(ap, unsigned long int);
+	char *str;
+
+	if (!n)
+		return (_puts((char *)"(nil)"));
+
+	str = convert(n, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, params);
+	*--str = 'x';
+	*--str = '0';
+	return (print_number(str, params));
 }

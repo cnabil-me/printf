@@ -1,10 +1,8 @@
 #include "main.h"
 /**
- * _putchar - writes the character c to stdout
+ * _putchar - writes a character c to stdout
  * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: (1) on success , (-1) on error.
  */
 int _putchar(int ch)
 {
@@ -21,7 +19,7 @@ int _putchar(int ch)
 	return (1);
 }
 /**
- * print_percent - prints string
+ * print_percent - print percent (%) character
  * @ap: argument pointer
  * @params: the parameters struct
  *
@@ -34,13 +32,13 @@ int print_percent(va_list ap, params_t *params)
 	return (_putchar('%'));
 }
 /**
- * print_char - prints character
+ * handle_character - prints character
  * @ap: argument pointer
  * @params: the parameters struct
  *
  * Return: number chars printed
  */
-int print_char(va_list ap, params_t *params)
+int handle_character(va_list ap, params_t *params)
 {
 	char pad_char = ' ';
 	unsigned int pad = 1, sum = 0, ch = va_arg(ap, int);

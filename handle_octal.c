@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * print_octal - prints unsigned octal numbers
+ * handle_octal - prints unsigned octal numbers
  * @ap: the argument pointer
  * @params: the parameters struct
  *
  * Return: bytes printed
  */
-int print_octal(va_list ap, params_t *params)
+int handle_octal(va_list ap, params_t *params)
 {
 	unsigned long l;
 	char *str;
