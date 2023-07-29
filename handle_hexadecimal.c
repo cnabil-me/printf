@@ -2,8 +2,7 @@
 /**
  * handle_hexadecimal - Handles and processes an hexadecimal argument.
  * @ap: The argument pointer.
- * @params: The parameters struct.
- *
+ * @params: sub specifier parameter
  * Return: The number of characters printed.
  */
 int handle_hexadecimal(va_list ap, params_t *params)
@@ -30,10 +29,10 @@ int handle_hexadecimal(va_list ap, params_t *params)
 }
 
 /**
- * handle_hexadecimal_upper_case - prints unsigned hexadecimal number (uppercase)
- * @ap: the argument pointer
- * @params: the parameters struct
- * Return: printed character count
+ * handle_hexadecimal_upper_case - Handles and processes an uppercase hexadecimal argument.
+ * @ap: The argument pointer.
+ * @params: sub specifier parameter
+ * Return: The number of characters printed.
  */
 int handle_hexadecimal_upper_case(va_list ap, params_t *params)
 {
@@ -59,11 +58,10 @@ int handle_hexadecimal_upper_case(va_list ap, params_t *params)
 }
 
 /**
- * handle_pointer - prints address
- * @ap: argument pointer
- * @params: the parameters struct
- *
- * Return: bytes printed
+ * handle_pointer - Handles and processes a pointer argument.
+ * @ap: The argument pointer.
+ * @params: sub specifier parameter
+ * Return: The number of characters printed.
  */
 int handle_pointer(va_list ap, params_t *params)
 {

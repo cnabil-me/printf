@@ -1,10 +1,9 @@
 #include "main.h"
 /**
- * print_number - prints a number with options
- * @str: the base number as a string
- * @params: the parameter struct
- *
- * Return: chars printed
+ * print_number - Prints a number in string format.
+ * @str: The string buffer where the number will be printed.
+ * @params: sub specifier parameter
+ * Return: The number of characters printed.
  */
 int print_number(char *str, params_t *params)
 {
@@ -31,11 +30,10 @@ int print_number(char *str, params_t *params)
 }
 
 /**
- * handle_number_right_shift - prints a number with options
+ * handle_number_right_shift - handle right shift number
  * @str: the base number as a string
- * @params: the parameter struct
- *
- * Return: chars printed
+ * @params: sub specifier parameter
+ * Return: count characters printed
  */
 int handle_number_right_shift(char *str, params_t *params)
 {
@@ -73,11 +71,10 @@ int handle_number_right_shift(char *str, params_t *params)
 }
 
 /**
- * handle_number_left_shift - prints a number with options
+ * handle_number_left_shift - handle left shift number
  * @str: the base number as a string
- * @params: the parameter struct
- *
- * Return: chars printed
+ * @params: sub specifier parameter
+ * Return: count characters printed
  */
 int handle_number_left_shift(char *str, params_t *params)
 {
@@ -103,11 +100,10 @@ int handle_number_left_shift(char *str, params_t *params)
 }
 
 /**
- * handle_integer - prints integer
+ * handle_integer - handle to prints integer
  * @ap: argument pointer
- * @params: the parameters struct
- *
- * Return: number chars printed
+ * @params: sub specifier parameter
+ * Return: number of characters printed
  */
 int handle_integer(va_list ap, params_t *params)
 {
@@ -123,11 +119,10 @@ int handle_integer(va_list ap, params_t *params)
 }
 
 /**
- * handle_unsigned_integer - prints unsigned integer numbers
+ * handle_unsigned_integer - handle to prints unsigned integer numbers
  * @ap: argument pointer
- * @params: the parameters struct
- *
- * Return: bytes printed
+ * @params: sub specifier parameter
+ * Return: the number of byte printed
  */
 int handle_unsigned_integer(va_list ap, params_t *params)
 {
