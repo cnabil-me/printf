@@ -1,6 +1,6 @@
 # Printf
-> Resources :
-> [https://cplusplus.com/reference/cstdio/printf/](https://cplusplus.com/reference/cstdio/printf/)
+
+> Resources :(https://cplusplus.com/reference/cstdio/printf/[https://cplusplus.com/reference/cstdio/printf/]
 
 ## What is Printf function?
 
@@ -26,7 +26,7 @@ Writes the C string pointed by _format_ to the standard output . If _format_ inc
 
 Where the _specifier character_ at the end is the most significant component, since it defines the type and the interpretation of its corresponding argument:
 
-| specifier | Output | Example |
+| _specifier_ | Output | Example |
 | --- | --- | --- |
 | d _or_ i | Signed decimal integer | 392 |
 | u | Unsigned decimal integer | 7235 |
@@ -44,7 +44,7 @@ Where the _specifier character_ at the end is the most significant component, si
 | c | Character | a |
 | s | String of characters | sample |
 | p | Pointer address | b8000000 |
-| n | Nothing printed.The corresponding argument must be a pointer to a signed int.The number of characters written so far is stored in the pointed location. |  |
+| n | Nothing printed.The corresponding argument must be a pointer to a signed int.The number of characters written so far is stored in the pointed location. | |
 | % | A % followed by another % character will write a single % to the stream. | % |
 
 ### sub_specifiers
@@ -77,7 +77,7 @@ The _format specifier_ can also contain sub-specifiers: _flags_, _width_, _.prec
 
 #### sub_specifier
 
-|  | specifiers | | | | | | |
+|  | specifiers |
 | --- | --- |---|---|---|---|---|---|
 | _length_ | d i | u o x X | f F e E g G a A | c | s | p | n |
 | _(none)_ | int | unsigned int | double | int | char\* | void\* | int\* |
@@ -104,3 +104,7 @@ There should be at least as many of these arguments as the number of values spec
 
 On success, the total number of characters written is returned.
 If a writing error occurs, the _error indicator_ (ferror) is set and a negative number is returned. If a multibyte character encoding error occurs while writing wide characters, errno is set to EILSEQ and a negative number is returned.
+
+
+
+
