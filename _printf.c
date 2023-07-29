@@ -2,7 +2,7 @@
 
 /**
  * _printf - Print formatted data to stdout
- * @format: string that contains the text to be written to stdout with format specifiers
+ * @format: string  to be written to stdout with format specifiers
  * Return: the number of characters printed (excluding the null byte)
  */
 int _printf(const char *format, ...)
@@ -35,7 +35,8 @@ int _printf(const char *format, ...)
 		if (get_modifier(p, &params))
 			p++;
 		if (!match_specifier(p))
-			sum += print_from_to(start, p, params.l_modifier || params.h_modifier ? p - 1 : 0);
+			sum += print_from_to(start, p, params.l_modifier
+			|| params.h_modifier ? p - 1 : 0);
 		else
 			sum += get_print_func(p, ap, &params);
 	}
