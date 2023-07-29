@@ -1,9 +1,10 @@
 #include "main.h"
 /**
- * handle_hexadecimal - prints unsigned hexadecimal number (lowercase)
- * @ap: the argument pointer
- * @params: the parameters struct
- * Return: printed character count
+ * handle_hexadecimal - Handles and processes an hexadecimal argument.
+ * @ap: The argument pointer.
+ * @params: The parameters struct.
+ *
+ * Return: The number of characters printed.
  */
 int handle_hexadecimal(va_list ap, params_t *params)
 {
