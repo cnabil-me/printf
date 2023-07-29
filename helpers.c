@@ -1,12 +1,11 @@
 #include "main.h"
 /**
- * convert - converter function, a clone of itoa
- * @num: number
- * @base: base
- * @flags: argument flags
+ * convert - converter number
+ * @num: the number
+ * @base: the number base
+ * @flags: the argument flags
  * @params: paramater struct
- *
- * Return: string
+ * Return: pointer to converted number
  */
 char *convert(long int num, int base, int flags, params_t *params)
 {
@@ -40,7 +39,6 @@ char *convert(long int num, int base, int flags, params_t *params)
 /**
  * is_digit - checks if character is digit
  * @c: the character to check
- *
  * Return: 1 if digit, 0 otherwise
  */
 int is_digit(int c)
@@ -51,7 +49,6 @@ int is_digit(int c)
 /**
  * _strlen - returns the length of a string
  * @s: the string whose length to check
- *
  * Return: integer length of string
  */
 int _strlen(char *s)
