@@ -1,10 +1,8 @@
 #include "main.h"
-
 /**
- * match_specifier - finds the format func
- * @s: the format string
- *
- * Return: the number of bytes printed
+ * match_specifier - match the associated functions from specifier
+ * @s: searched specifier string
+ * Return: specifier function
  */
 int (*match_specifier(char *s))(va_list ap, params_t *params)
 {
