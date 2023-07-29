@@ -1,10 +1,9 @@
 #include "main.h"
 /**
- * handle_binary - prints unsigned binary number
- * @ap: the argument pointer
- * @params: the parameters struct
- *
- * Return: bytes printed
+ * handle_binary - function to print an unsigned binary number
+ * @ap: pointer to point struct
+ * @params: sub specifier parameter
+ * Return: Return the number of bytes printed
  */
 int handle_binary(va_list ap, params_t *params)
 {
