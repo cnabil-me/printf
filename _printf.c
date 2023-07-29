@@ -8,11 +8,11 @@
 int _printf(const char *format, ...)
 {
 	int sum = 0;
-	va_list ap;
+	va_list arg_p;
 	char *p, *start;
 	params_t params = PARAMS_INIT;
 
-	va_start(ap, format);
+	va_start(arg_p, format);
 
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	for (p = (char *)format; *p; p++)
 	{
-		init_sub_specifiers(&params, ap);
+		init_sub_specifiers(&params, arg_p);
 		if (*p != '%')
 		{
 			sum += _putchar(*p);
@@ -30,16 +30,16 @@ int _printf(const char *format, ...)
 		p++;
 		while (get_flag(p, &params))
 			p++;
-		p = get_width(p, &params, ap);
-		p = get_precision(p, &params, ap);
+		p = get_width(p, &params, arg_p);
+		p = get_precision(p, &params, arg_p);
 		if (get_modifier(p, &params))
 			p++;
 		if (!match_specifier(p))
 			sum += print_from_to(start, p, params.l_modifier || params.h_modifier ? p - 1 : 0);
 		else
-			sum += get_print_func(p, ap, &params);
+			sum += get_print_func(p, arg_p, &params);
 	}
 	_putchar(BUFFER_FLUSH);
-	va_end(ap);
+	va_end(arg_p);
 	return (sum);
 }
