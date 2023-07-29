@@ -29,7 +29,7 @@ int handle_hexadecimal(va_list ap, params_t *params)
 }
 
 /**
- * handle_hexadecimal_upper_case - prints unsigned hexadecimal 
+ * handle_hexadecimal_upper_case - prints unsigned hexadecimal
  * @ap: the argument pointer
  * @params: the parameters struct
  * Return: printed character count
