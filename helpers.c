@@ -47,9 +47,9 @@ int is_digit(int c)
 }
 
 /**
- * _strlen - returns the length of a string
+ * _strlen - returns the length a string
  * @s: the string whose length to check
- * Return: integer length of string
+ * Return: length count
  */
 int _strlen(char *s)
 {
