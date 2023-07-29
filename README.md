@@ -1,5 +1,4 @@
 # Printf
-
 > Resources :
 > [https://cplusplus.com/reference/cstdio/printf/](https://cplusplus.com/reference/cstdio/printf/)
 
